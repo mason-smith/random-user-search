@@ -17,9 +17,6 @@ export const fetchRandomUsers = (): AppThunk => async (
   // Grab params from state
   const state = getState();
   const { apiUrl } = state.appSettings;
-  // const config = {
-  //   headers: { Authorization: apiKey },
-  // };
   try {
     const {
       data: { results },

@@ -7,8 +7,6 @@ import styles from './UserCard.module.css';
 const UserCard: FC<UserCardProps> = (props) => {
   const { selectedUser } = props;
 
-  console.log('selectedUser :>> ', selectedUser);
-
   return (
     <div className={`${styles.card} ${styles.cardContainer}`}>
       <img

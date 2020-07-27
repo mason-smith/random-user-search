@@ -14,6 +14,8 @@ import UserCard from './components/UserCard';
 
 export const SearchPage = () => {
   const dispatch = useDispatch();
+
+  // Pieces of local state
   const [searchValue, setSearchValue] = useState<string | null>(null);
   const [activeSuggestion, setActiveSuggestion] = useState<number>(0);
   const [filteredUsers, setFilteredUsers] = useState<User[]>([]);
