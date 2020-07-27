@@ -1,11 +1,12 @@
 import React, { FC } from 'react';
+import cuid from 'cuid';
 
 // Local Dependencies
 import { ListProps } from './types';
 import styles from './List.module.css';
 
 const List: FC<ListProps> = (props) => {
-  const { options, activeSuggestion } = props;
+  const { options, activeSuggestion, onClick } = props;
   return (
     <div className={styles.list}>
       {options?.length ? (
@@ -20,8 +21,8 @@ const List: FC<ListProps> = (props) => {
             return (
               <li
                 className={active}
-                key={option.name.first}
-                // onClick={onClick}
+                key={cuid()}
+                onClick={() => onClick(option)}
               >
                 <img
                   alt={`${option.name.first} ${option.name.last} thumbnail`}

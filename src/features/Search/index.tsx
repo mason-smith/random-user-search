@@ -7,7 +7,7 @@ import { selectRandomUserList } from './selectors';
 import { User } from './types';
 import { RootState } from 'redux/store';
 import Input from 'components/Input';
-import Button from 'components/Button';
+// import Button from 'components/Button';
 import styles from './Search.module.css';
 import List from './components/List';
 
@@ -48,6 +48,13 @@ export const SearchPage = () => {
       // Don't display anything if less than 3 characters
       setFilteredUsers([]);
     }
+  };
+
+  const handleClick = (option: User) => {
+    // Update the user input and reset the rest of the state
+    setActiveSuggestion(0);
+    setFilteredUsers([]);
+    setSelectedUser(option);
   };
 
   const handleKeyDown = (keyCode: number) => {
@@ -95,14 +102,18 @@ export const SearchPage = () => {
             id="random-users"
           />
         </form>
-        <Button onClick={() => console.log(searchValue)}>Select User</Button>
+        {/* <Button onClick={() => console.log(searchValue)}>Select User</Button> */}
       </div>
       {selectedUser ? (
         <p className={styles.selectedUser}>
           You selected {selectedUser.name.first} {selectedUser.name.last}
         </p>
       ) : null}
-      <List options={filteredUsers} activeSuggestion={activeSuggestion} />
+      <List
+        onClick={(e) => handleClick(e)}
+        options={filteredUsers}
+        activeSuggestion={activeSuggestion}
+      />
     </>
   );
 };
