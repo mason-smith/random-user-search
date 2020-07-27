@@ -1,3 +1,7 @@
+This project is intentionally over-engineered with the intention of displaying examples and practices that would potentially be used in a real-life production application.
+
+I'm using Redux to call the API and store the retrieved data. This can easily be done in something like useEffect() and stored at the component level, but that wouldn't be fun or demonstrative of how Redux can be used to do that for us.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
 ## Available Scripts

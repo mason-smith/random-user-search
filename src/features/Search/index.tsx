@@ -10,6 +10,7 @@ import Input from 'components/Input';
 // import Button from 'components/Button';
 import styles from './Search.module.css';
 import List from './components/List';
+import UserCard from './components/UserCard';
 
 export const SearchPage = () => {
   const dispatch = useDispatch();
@@ -105,9 +106,9 @@ export const SearchPage = () => {
         {/* <Button onClick={() => console.log(searchValue)}>Select User</Button> */}
       </div>
       {selectedUser ? (
-        <p className={styles.selectedUser}>
-          You selected {selectedUser.name.first} {selectedUser.name.last}
-        </p>
+        <div className={styles.selectedUser}>
+          <UserCard selectedUser={selectedUser} />
+        </div>
       ) : null}
       <List
         onClick={(e) => handleClick(e)}
