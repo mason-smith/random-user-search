@@ -1,0 +1,32 @@
+.button {
+  appearance: none;
+  background: none;
+  font-size: 1.5em;
+  padding-left: 12px;
+  padding-right: 12px;
+  letter-spacing: 4px;
+  outline: none;
+  border: 2px solid transparent;
+  color: rgb(244, 123, 35);
+  padding-bottom: 4px;
+  cursor: pointer;
+  background-color: rgba(244, 123, 35, 0.1);
+  border-radius: 2px;
+  transition: all 0.15s;
+}
+
+.button:hover,
+.button:focus {
+  border: 2px solid rgba(244, 123, 35, 0.4);
+}
+
+.button:active {
+  background-color: rgba(244, 123, 35, 0.2);
+}
+
+.button:disabled {
+  cursor: auto;
+  color: rgb(77, 77, 77);
+  background-color: transparent;
+  border: none;
+}

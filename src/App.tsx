@@ -1,11 +1,15 @@
 import React from 'react';
 
 // Local Dependencies
-import './App.css';
+import styles from './App.module.css';
 import { SearchPage } from 'features/Search';
 
 const App = () => {
-  return <SearchPage />;
+  return (
+    <div className={styles.App}>
+      <SearchPage />
+    </div>
+  );
 };
 
 export default App;

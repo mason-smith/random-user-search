@@ -1,0 +1,15 @@
+.primaryInput {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 66.66%;
+  padding-bottom: 2em;
+}
+
+.form {
+  width: 66%;
+}
+
+.overrideInput {
+  width: 100% !important;
+}
