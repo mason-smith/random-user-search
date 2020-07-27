@@ -13,7 +13,7 @@ import List from './components/List';
 
 export const SearchPage = () => {
   const dispatch = useDispatch();
-  const [searchValue, setSearchValue] = useState<string>('');
+  const [searchValue, setSearchValue] = useState<string | null>(null);
   const [activeSuggestion, setActiveSuggestion] = useState<number>(0);
   const [filteredUsers, setFilteredUsers] = useState<User[]>([]);
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
@@ -43,7 +43,7 @@ export const SearchPage = () => {
           index === self.findIndex((r) => r.id.value === user.id.value)
       );
     if (e.target.value.length >= 3) {
-      setFilteredUsers(filteredArray);
+      setFilteredUsers(filteredArray.splice(0, 10));
     } else {
       // Don't display anything if less than 3 characters
       setFilteredUsers([]);
@@ -56,6 +56,7 @@ export const SearchPage = () => {
     if (keyCode === 13) {
       setActiveSuggestion(0);
       setSelectedUser(filteredUsers[activeSuggestion]);
+      setFilteredUsers([]);
     }
     // User pressed the up arrow, decrement the index
     else if (keyCode === 38) {
@@ -84,7 +85,7 @@ export const SearchPage = () => {
           }}
         >
           <Input
-            value={searchValue}
+            value={searchValue || ''}
             onChange={(e) => handleSearchChange(e)}
             placeholder="Search for user"
             overrideClasses={styles.overrideInput}
@@ -96,6 +97,11 @@ export const SearchPage = () => {
         </form>
         <Button onClick={() => console.log(searchValue)}>Select User</Button>
       </div>
+      {selectedUser ? (
+        <p className={styles.selectedUser}>
+          You selected {selectedUser.name.first} {selectedUser.name.last}
+        </p>
+      ) : null}
       <List options={filteredUsers} activeSuggestion={activeSuggestion} />
     </>
   );

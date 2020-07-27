@@ -1,22 +1,23 @@
-.noSuggestions {
-  color: #999;
-  padding: 0.5rem;
+.list {
+  position: relative;
+  top: 5rem;
 }
 
 .suggestions {
-  border: 1px solid #999;
-  border-top-width: 0;
   list-style: none;
-  margin-top: 0;
-  max-height: 143px;
+  max-height: 75vh;
   overflow-y: auto;
   padding-left: 0;
-  width: fit-content;
-  /* width: calc(300px + 1rem); */
 }
 
 .suggestions li {
   padding: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.suggestions img {
+  padding-right: 1rem;
 }
 
 .suggestionActive,
