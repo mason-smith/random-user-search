@@ -7,7 +7,11 @@ export interface InputProps {
   overrideClasses?: any;
   placeholder?: string;
   value: string;
-  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  onKeyDown: (e: any) => void;
+  list: string | undefined;
+  name: string | undefined;
+  id: string | undefined;
 }
 
 /**
