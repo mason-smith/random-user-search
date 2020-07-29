@@ -32,6 +32,7 @@ export const searchSlice = createSlice({
     ) => {
       return {
         ...state,
+        // Alphabetize array according to last name
         randomUsers: action.payload.sort((a: User, b: User) =>
           a.name.last.toLowerCase() > b.name.last.toLowerCase()
             ? 1

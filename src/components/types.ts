@@ -9,9 +9,9 @@ export interface InputProps {
   value: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   onKeyDown: (e: any) => void;
-  list: string | undefined;
-  name: string | undefined;
-  id: string | undefined;
+  list?: string | undefined;
+  name?: string | undefined;
+  id?: string | undefined;
 }
 
 /**

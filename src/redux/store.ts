@@ -12,7 +12,8 @@ import reducer from './rootReducer';
 let middleware = [...getDefaultMiddleware()] as const;
 // We don't want our logger middleware to be
 // visible in production environments
-if (process.env.NODE_ENV !== 'production') {
+// or when running tests (clears clutter in tests)
+if (process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test') {
   // Prevents importing redux-logger in prod
   // thus reducing bundle size
   const { createLogger } = require('redux-logger');

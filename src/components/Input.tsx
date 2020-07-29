@@ -15,6 +15,7 @@ const Input: FC<InputProps> = (props) => {
     name,
     id,
   } = props;
+
   return (
     <input
       value={value}
